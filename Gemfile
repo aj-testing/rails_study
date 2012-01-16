@@ -9,7 +9,9 @@ gem 'rails', '3.1.0'
 #commented for production
 #Make sure you don't include sqlite in your Gemfile in production environments:
 #gem 'sqlite3' 
-#gem 'pg'
+
+#gem pg postgres is needed by heroku not sqlite
+gem 'pg'
 
 #tried below but erroneous
 #gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'

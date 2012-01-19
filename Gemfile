@@ -2,16 +2,18 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
+#AJ Made change heroku config:add RACK_ENV=development
+#Setting the environment to development  enable the error to be logged
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 #Heroku allows only postgres, so sqlite gem not installed.
 #commented for production
 #Make sure you don't include sqlite in your Gemfile in production environments:
-#gem 'sqlite3' 
-
+gem 'sqlite3' 
 #gem pg postgres is needed by heroku not sqlite
-gem 'pg'
+#gem 'pg'
 
 #tried below but erroneous
 #gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
@@ -37,8 +39,10 @@ gem 'jquery-rails'
 
 #Heroku allows only postgres, so sqlite gem not installed.
 group :development, :test do
-  gem 'sqlite3' 
-  #gem 'pg'
+  
+  gem 'pg'
+  gem 'heroku'
+  gem 'database_cleaner'
   # Pretty printed test output
   gem 'turn', :require => false
 end
